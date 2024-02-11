@@ -39,7 +39,7 @@ public class DataSourceConfig {
 
   @Bean
   DataSourceScriptDatabaseInitializer postsDataSourceScriptDatabaseInitializer(
-      @Qualifier("postsDataSource") DataSource dataSource) {
+      DataSource dataSource) {
     var settings = new DatabaseInitializationSettings();
     settings.setSchemaLocations(List.of("classpath:posts-schema.sql"));
     settings.setMode(DatabaseInitializationMode.ALWAYS);

@@ -19,8 +19,10 @@ public class TutorialMultiplosDsApplication {
 			JdbcClient postsJdbcClient,
 			@Qualifier("commentsJdbcClient") JdbcClient commentsJdbcClient) {
 		return args -> {
-			System.out.println(postsJdbcClient.sql("SELECT * FROM posts").query(Post.class).list());
-			System.out.println(commentsJdbcClient.sql("SELECT * FROM comments").query(Comment.class).list());
+			System.out.println(postsJdbcClient.sql(
+					"SELECT * FROM posts").query(Post.class).list());
+			System.out.println(commentsJdbcClient.sql(
+					"SELECT * FROM comments").query(Comment.class).list());
 		};
 	}
 }
